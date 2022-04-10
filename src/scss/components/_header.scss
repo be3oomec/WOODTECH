@@ -1,125 +1,176 @@
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  position: relative;
-
-  z-index: 10;
-
-  background-color: $black-800;
+  position: absolute;
+  top: 0;
+  @include adaptive-value('left', 50, 15, 1);
+  @include adaptive-value('right', 50, 15, 1);
+  z-index: 1000;
+  color: $white;
+  padding: 40px 0 27px;
   border-bottom: 1px solid rgba($white, 0.1);
 }
 
-.header__logo {
+.header__nav,
+.header__list,
+.header__social {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
 
-  flex: 0 0 200px;
+.header__nav>* {
+  margin: 0 10px;
+}
 
-  margin-right: 18px;
+// .header__nav {}
 
-  &:hover {
-    .header__logo-text {
-      color: $orange;
-    }
-  }
+.header__logo {
+  min-width: 122px;
 }
 
 .header__logo-img {
-  width: 34px;
-  height: 34px;
-  margin-right: 18px;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
-.header__logo-text {
-  font-family: $raleway;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: 0.5em;
-  text-transform: uppercase;
-  color: $white;
-  transition: color 0.3s;
-}
+.header__list {
+  gap: 20px;
 
-.header__contacts {
-  display: flex;
-}
+  @include _1200 {
+    gap: 10px;
+  }
 
-.header__separator {
-  position: relative;
-  &:before {
-    content: "";
-    width: 1px;
-    height: 30px;
-    background-color: #fff;
-    opacity: 0.2;
+  @include _992 {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transition, visibility $transition;
+
+    display: block;
 
     position: absolute;
-    top: -50%;
+    top: 35px;
+    right: 50px;
+
+    background-color: $black-700;
+    border-radius: $radius;
+    overflow: hidden;
+
+    .header__link {
+      text-align: left;
+      padding: 14px 35px;
+
+      display: block;
+
+      border-bottom: 1px solid rgba($white, 0.05);
+      color: rgba($white, 0.5);
+      border-radius: 0;
+      line-height: 1.5;
+      font-size: 12px;
+      text-transform: uppercase;
+
+      &:focus,
+      &:hover {
+        color: $white;
+        background-color: rgba($black-100, 0.075);
+      }
+
+      &:active {
+        background-color: rgba($black-100, 0.1);
+      }
+    }
+  }
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity $transition, visibility $transition;
   }
 }
 
-.header__contacts > * {
-  margin: 0 20px;
-}
+// .header__item {}
 
-.header__phone,
-.header__address {
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 12px;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: rgba($white, 0.5);
-}
+.header__link {
+  font-weight: 500;
+  color: $white;
 
-.header__phone span,
-.header__address span {
-  color: $orange;
-  font-family: $roboto;
-}
+  padding: 7px 15px;
 
-// .header__address {}
+  background-color: transparent;
+  border-radius: $radius-style;
 
-.header__decor {
-  flex: 1 0 0;
-  text-align: center;
+  transition: background $transition;
 
-  &::before {
-    content: '';
-    height: 1px;
-    width: 50px;
-    background-color: $white;
-    display: inline-block;
-    opacity: 0.2;
-    position: relative;
-    top: -5px;
+  &:focus,
+  &:hover {
+    background-color: rgba($black-100, 0.2);
   }
+
+  &:active {
+    background-color: rgba($black-100, 0.1);
+  }
+}
+
+.header__social {
+  gap: 12px;
+
+  padding: 9px 15px;
+
+  background-color: rgba($black-100, 0.25);
+  border-radius: 70px;
+
+  @include _992 {
+    display: none;
+  }
+}
+
+// .social {}
+
+.social__item {
+  line-height: 0;
+}
+
+.social__link {
+  transition: opacity $transition;
+
+  &:focus {
+    .social__icon {
+      fill: $orange;
+    }
+  }
+
+  &:hover {
+    .social__icon {
+      fill: $orange;
+    }
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.social__icon {
+  width: 16px;
+  height: 18px;
+  fill: $white;
+  transition: fill $transition, opacity $transition;
 }
 
 .header__burger {
-  flex: 0 0 200px;
-  text-align: right;
-  height: $size70;
-  position: relative;
-}
+  display: none;
 
-.header__burger span {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: $size70;
-  height: $size70;
-  background-color: #3C3C3C;
-  background-image: url(../img/burger.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: background-color 0.3s;
+  @include _992 {
+    display: block;
+    width: 20px;
+    height: 16px;
 
-  &:hover {
-    background-color: $orange;
+    background-image: url(../img/burger.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &--active {
+    background-image: url(../img/close.svg);
   }
 }

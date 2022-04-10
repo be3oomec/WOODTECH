@@ -1,34 +1,55 @@
 <header class="header">
-  <!-- Logotype site START -->
-  <a class="header__logo" href="#">
-    <span class="header__logo-wrapper">
-      <img class="header__logo-img" src='./img/logo.svg' alt='Site logo' width='34' height='34' aria-hidden="true">
-    </span>
-    <span class="header__logo-text">Вездеход</span>
-  </a>
-  <!-- Logotype site END -->
-  <!-- Decor START -->
-  <span class="header__decor"></span>
-  <!-- Decor END -->
-  <div class="header__contacts">
-    <!-- Phone START -->
-    <a class="header__phone" href="tel:5556534">
-      Телефон: <span>555-65-34</span>
-    </a>
-    <!-- Phone END -->
-    <div class="header__separator"></div>
-    <!-- Address START -->
-    <address class="header__address">
-      Адрес: <span>ул. Московская, 35</span>
-    </address>
-    <!-- Address END -->
+  <div class="container">
+    <nav class="header__nav">
+      <!-- Logotype site START -->
+      <a class="header__logo" href="#">
+        <img class="header__logo-img" src='./img/logo.svg' alt='Site logo' width='122' height='30'>
+      </a>
+      <!-- Logotype site END -->
+      <!-- Navbar start -->
+      <ul class='header__list'>
+        <li class='header__item'><a class="header__link" href="#">Главная</a></li>
+        <li class='header__item'><a class="header__link" href="#">Проекты</a></li>
+        <li class='header__item'><a class="header__link" href="#">Услуги</a></li>
+        <li class='header__item'><a class="header__link" href="#">Блог</a></li>
+        <li class='header__item'><a class="header__link" href="#">Компания</a></li>
+      </ul>
+      <!-- Navbar end -->
+      <!-- Social start -->
+      <ul class='header__social social'>
+        <li class='social__item'>
+          <a class="social__link" href="#">
+            <svg class='social__icon'>
+              <use xlink:href='./img/sprite.svg#instagram'></use>
+            </svg>
+          </a>
+        </li>
+        <li class='social__item'>
+          <a class="social__link" href="#">
+            <svg class='social__icon'>
+              <use xlink:href='./img/sprite.svg#fb'></use>
+            </svg>
+          </a>
+        </li>
+        <li class='social__item'>
+          <a class="social__link" href="#">
+            <svg class='social__icon'>
+              <use xlink:href='./img/sprite.svg#twitter'></use>
+            </svg>
+          </a>
+        </li>
+        <li class='social__item'>
+          <a class="social__link" href="#">
+            <svg class='social__icon'>
+              <use xlink:href='./img/sprite.svg#vk'></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <!-- Social end -->
+      <!-- Burger START -->
+      <button class="header__burger" type="button" aria-label="Мобильное меню"></button>
+      <!-- Burger END -->
+    </nav>
   </div>
-  <!-- Decor START -->
-  <span class="header__decor"></span>
-  <!-- Decor END -->
-  <!-- Burger START -->
-  <button class="header__burger" type="button" aria-label="Мобильное меню">
-    <span></span>
-  </button>
-  <!-- Burger END -->
 </header>
