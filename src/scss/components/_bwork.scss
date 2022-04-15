@@ -1,0 +1,110 @@
+.bwork {
+  background-color: #fafafa;
+
+  @include adaptive-value('margin-bottom', 130, 65, 1);
+
+  @include adaptive-value('padding-bottom', 45, 20, 1);
+}
+
+.bwork__top {
+  margin-bottom: 67px;
+  @include adaptive-value('padding-top', 70, 35, 1);
+  @include adaptive-value('padding-bottom', 170, 115, 1);
+
+  background-color: $black-700;
+}
+
+.bwork__top-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2D3038;
+
+    @include _992 {
+      display: none;
+    }
+  }
+}
+
+.bwork__descr,
+.bwork__title-block {
+  max-width: 530px;
+  flex: 0 0 50%;
+  margin-bottom: 20px;
+
+  @include _992 {
+    max-width: 100%;
+    flex: 0 0 100%;
+    text-align: center;
+  }
+}
+
+.bwork__descr {
+  text-align: right;
+  color: $white;
+  padding-right: 40px;
+
+  @include _992 {
+    display: none;
+  }
+}
+
+.bwork__title-block {
+  padding-left: 40px;
+
+  @include _992 {
+    padding-left: 0;
+  }
+}
+
+.bwork__subtitle {
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: $orange;
+
+  &:before {
+    content: "\\\\";
+    margin-right: 5px;
+  }
+}
+
+// .bwork__title {}
+
+.bwork__bottom {
+  margin-top: -180px;
+  @include adaptive-value('margin-bottom', 45, 20, 1);
+}
+
+.bwork__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  grid-gap: 20px;
+}
+
+// .bwork__item {}
+
+// .bwork__link {}
+
+// .bwork__card {}
+
+.bwork__btn {
+  width: 170px;
+  margin: 0 auto;
+}
+
+// .bwork__btn-text {}
+
+

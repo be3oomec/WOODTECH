@@ -75,19 +75,6 @@ html.is-animating .transition-fade {
   margin: 0 auto;
   padding: 0 15px;
   max-width: $container + 30px;
-
-  @include _576 {
-    max-width: 375px;
-  }
-
-  @include _480 {
-    max-width: 320px;
-  }
-
-  @include _375 {
-    max-width: 280px;
-  }
-
 }
 
 body {
@@ -126,6 +113,7 @@ body {
   padding: 12px 30px;
   width: 260px;
 
+  font-family: $raleway;
   font-weight: 800;
   font-size: 14px;
   line-height: 1.4;
@@ -134,4 +122,15 @@ body {
   color: $white;
   background-color: $orange;
   border-radius: $radius-style;
+  transition: opacity $transition;
+
+  &:focus {
+    opacity: 0.7;
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+  &:active {
+    opacity: 0.5;
+  }
 }

@@ -1,15 +1,13 @@
 // Подключение свайпера gsap micromodal
-
 import MicroModal from 'micromodal';
-
 import { gsap, Power2 } from 'gsap';
-
 import Swiper, { Navigation, Pagination, Parallax, Mousewheel, Controller, Keyboard, Scrollbar } from 'swiper';
 
 Swiper.use([Navigation, Pagination, Parallax, Mousewheel, Controller, Keyboard, Scrollbar]);
 
-// SWIPER
 
+
+// SWIPER
 const heroSlider = new Swiper('.hero-slider', {
   speed: 800,
   effect: 'fade',
@@ -39,7 +37,6 @@ const heroSlider = new Swiper('.hero-slider', {
   runCallbacksOnInit: true
 });
 
-
 // Micromodal
 MicroModal.init({
   openTrigger: 'data-micromodal-open',
@@ -50,6 +47,16 @@ MicroModal.init({
   awaitCloseAnimation: true,
 })
 
+// const modalBtnOpen = document.querySelector('[data-micromodal-open]'),
+//       modalBtnClose = document.querySelector('[data-micromodal-close]'),
+//       modalName = document.querySelector('.modal [name=form]');
+
+// modalBtnOpen.addEventListener('click', () => {
+//   modalName.value(e.target.dataset('form'))
+// });
+// modalBtnClose.addEventListener('click', () => {
+//   modalName.value(e.target.dataset(''))
+// });
 
 
 // Burger active
@@ -82,5 +89,10 @@ document.addEventListener('click', e => {
   }
 })
 
+// Callback list number - TRUST block -
+// const numbers = document.querySelectorAll('.trust__item');
 
+// numbers.forEach(el => {
+//   el.innerHTML.replace(/\D/g, '<span>$1</span>');
+// });
 

@@ -42,6 +42,13 @@
 
 .modal__footer {
   text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.modal__button {
+  width: 160px;
+}
 // .modal__btn-primary {}

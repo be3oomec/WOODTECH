@@ -1,0 +1,133 @@
+.card {
+  overflow: hidden;
+  background-color: $white;
+
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #e4e6e8;
+    transition: background $transition;
+  }
+
+  &:hover {
+    &:after {
+      background-color: $orange;
+    }
+
+    .card__title {
+      color: $orange;
+
+      &:after {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.card__img {
+  max-width: 100%;
+
+  position: relative;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url(../img/arrow-d-left.svg);
+    background-repeat: no-repeat;
+    background-position: 25px 25px;
+    opacity: 0;
+    transition: $transition opacity, background-position 0.3s ease-out;
+  }
+
+  &:before {
+    background-color: rgba($black, 0.25);
+  }
+  &:after {
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    &:before,
+    &:after {
+      opacity: 1;
+      background-position: 20px 20px;
+    }
+  }
+}
+
+.card__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.card__content {
+  padding: 0 25px;
+  padding-top: 25px;
+  padding-bottom: 30px;
+}
+
+.card__address {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  font-weight: 700;
+  color: #989DA5;
+
+  margin-bottom: 10px;
+  padding-left: 23px;
+
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 0;
+    background-image: url(../img/map.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 12px;
+    height: 16px;
+  }
+}
+
+.card__title {
+  font-weight: 700;
+  @include adaptive-value('font-size', 20, 16, 1);
+  line-height: 1.2;
+  color: $black-600;
+  padding-left: 23px;
+  transition: color $transition;
+
+  position: relative;
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 10px;
+    background-image: url(../img/ellipse-orange.svg);
+    background-repeat: no-repeat;
+    background-position: 3px 9.5px;
+  }
+
+  &:after {
+    background-image: url(../img/ellipse.svg);
+    transition: opacity 0.5s ease-out;
+  }
+}
