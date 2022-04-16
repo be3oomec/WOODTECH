@@ -1,22 +1,35 @@
 // Подключение свайпера gsap micromodal
 import MicroModal from 'micromodal';
-import { gsap, Power2 } from 'gsap';
-import Swiper, { Navigation, Pagination, Parallax, Mousewheel, Controller, Keyboard, Scrollbar } from 'swiper';
+import {
+  gsap,
+  Power2
+} from 'gsap';
+import Swiper, {
+  Navigation,
+  Pagination,
+  Parallax,
+  Mousewheel,
+  Controller,
+  Keyboard,
+  Scrollbar
+} from 'swiper';
 
 Swiper.use([Navigation, Pagination, Parallax, Mousewheel, Controller, Keyboard, Scrollbar]);
 
 
-
-// SWIPER
+// hero slider
 const heroSlider = new Swiper('.hero-slider', {
   speed: 800,
   effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
   centeredSlides: true,
   mousewheel: true,
   pagination: {
     el: '.hero-slider__pagination',
     type: "custom",
-    renderCustom: function(swiper, current, total) {
+    renderCustom: function (swiper, current, total) {
       let indexTotal = total >= 10 ? total : `0${total}`
       let indexCurrent = current >= 10 ? current : `0${current}`
       return `<b>${indexCurrent}</b><span></span> ${indexTotal}`
@@ -96,3 +109,32 @@ document.addEventListener('click', e => {
 //   el.innerHTML.replace(/\D/g, '<span>$1</span>');
 // });
 
+
+// slider advantages
+const advSlide = new Swiper('.advantages__slider', {
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+  speed: 1400,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  }
+})
+
+
+// slider blog
+const blogSlide = new Swiper('.blog__slider', {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  pagination: {
+    el: '.blog__pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: "auto",
+    },
+  },
+});

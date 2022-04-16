@@ -1,0 +1,155 @@
+.footer {
+  @include adaptive-value('padding-top', 70, 35, 1);
+  @include adaptive-value('padding-bottom', 70, 35, 1);
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer__col {
+  flex: 1 1 auto;
+
+  @include _992 {
+    order: 3;
+
+    flex: 0 0 46%;
+  }
+
+  @include _576 {
+    flex: 0 0 43%;
+  }
+}
+
+.footer__col--left {
+  @include _992 {
+    order: 1;
+  }
+}
+
+.footer__col--right {
+  @include _992 {
+    order: 2;
+  }
+}
+
+.footer__col--left,
+.footer__col--right {
+  max-width: 345px;
+  flex: 0 1 345px;
+
+  @include _992 {
+    max-width: 100%;
+
+    flex: 0 0 46%;
+  }
+
+  @include _576 {
+    flex: 0 0 100%;
+  }
+}
+
+.footer__logo {
+  display: block;
+  margin-bottom: 40px;
+}
+
+// .footer__logo-img {}
+
+.footer__title {
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: $white;
+  margin-bottom: 20px;
+
+  &--decor {
+    padding-bottom: 20px;
+
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: $orange;
+      border-radius: $radius-style;
+      width: 25px;
+      height: 3px;
+    }
+  }
+}
+
+.footer__descr {
+  font-size: 13px;
+  color: rgba($white, 0.7);
+
+  &--right {
+    margin-bottom: 35px;
+  }
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+// .footer__list {}
+
+.footer__item {
+  margin-bottom: 10px;
+}
+
+.footer__link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: $white;
+  transition: color $transition;
+  white-space: nowrap;
+
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $orange;
+    transition: width $transition;
+  }
+
+  &:focus {
+    color: $orange;
+  }
+  &:hover {
+    color: $orange;
+  }
+  &:active {
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
+.footer__list {
+  transition: max-height 0.3s ease-in-out, opacity 0.5s;
+  @include _576 {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.open .footer__list {
+  opacity: 1;
+  visibility: visible;
+}

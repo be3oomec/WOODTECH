@@ -1,9 +1,7 @@
 .bwork {
   background-color: #fafafa;
 
-  @include adaptive-value('margin-bottom', 130, 65, 1);
-
-  @include adaptive-value('padding-bottom', 45, 20, 1);
+  @include adaptive-value('padding-bottom', 60, 20, 1);
 }
 
 .bwork__top {

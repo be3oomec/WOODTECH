@@ -87,8 +87,8 @@ body {
 }
 
 .title {
-  font-weight: 800;
-  font-size: 29px;
+  font-weight: 900;
+  @include adaptive-value('font-size', 29, 23, 1);
   line-height: 1.2;
   color: $white;
 
@@ -98,11 +98,16 @@ body {
 }
 
 .subtitle {
-  font-weight: 800;
+  font-weight: 900;
   font-size: 16px;
   line-height: 1.2;
   text-transform: uppercase;
   color: $orange;
+
+  &:before {
+    content: "\\\\";
+    margin-right: 5px;
+  }
 }
 
 .button-style {

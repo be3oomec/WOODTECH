@@ -1,0 +1,48 @@
+.social {
+  &--footer {
+
+    // .social__item {}
+
+    .social__link {
+      border: 1px solid $black-100;
+      border-radius: 0px 5px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 12px;
+
+      width: 40px;
+      height: 40px;
+
+      transition: background $transition, border $transition, opacity $transition;
+
+      &:focus {
+        background-color: $orange;
+        border: 1px solid $orange;
+
+        .social__icon {
+          fill: $white;
+        }
+      }
+
+      &:hover {
+        background-color: $orange;
+        border: 1px solid $orange;
+
+        .social__icon {
+          fill: $white;
+        }
+      }
+    }
+
+    .social__icon {
+      max-width: 19px;
+      height: 100%;
+      fill: $black-100;
+      transition: fill $transition;
+    }
+
+  }
+}
