@@ -1,0 +1,36 @@
+.project-items {
+  padding: 166px 0 70px 0;
+  background-color: $white;
+}
+
+.project-items__top {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 50px;
+
+  max-width: 550px;
+}
+
+.project-items__title {
+  margin-bottom: 25px;
+}
+
+.project-items__descr {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #999999;
+}
+
+.project-items__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px,1fr));
+  grid-gap: 20px;
+  justify-items: center;
+}
+
+.project-items__item {
+  &--lg {
+    grid-row: 2 span;
+  }
+}
