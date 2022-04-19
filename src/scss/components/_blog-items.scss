@@ -1,0 +1,27 @@
+.blog-items {
+  padding-top: 165px;
+  background-color: $white;
+}
+
+.blog-items__inner {
+  padding-bottom: 50px;
+}
+
+.blog-items__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-gap: 20px;
+  justify-items: center;
+
+  margin-bottom: 45px;
+
+  .blog__item {
+    max-width: 100% !important;
+  }
+}
+
+.blog-items__pagination>* {
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+}

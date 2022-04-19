@@ -1,0 +1,154 @@
+.services {
+  padding-top: 165px;
+  background-color: $white;
+}
+
+.services__inner {
+  padding-bottom: 50px;
+}
+
+// .services__top {}
+
+// .services__title {}
+
+// .services__descr {}
+
+.services__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(470px, 1fr));
+  grid-gap: 20px;
+  justify-items: center;
+}
+
+.services__item {
+  max-width: 550px;
+
+  @include _992 {
+    max-width: 670px;
+  }
+}
+
+.services__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid #E4E6E8;
+
+  transition: width $transition;
+
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -1px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 30px;
+    background-color: $orange;
+    transition: width 0.2s;
+  }
+
+  &:focus {
+    &:before {
+      width: 3px;
+    }
+
+    .services__heading {
+      color: $orange;
+
+      &:after {
+        background-color: $orange;
+      }
+    }
+  }
+
+  &:hover {
+    &:before {
+      width: 3px;
+    }
+
+    .services__heading {
+      color: $orange;
+
+      &:after {
+        background-color: $orange;
+      }
+    }
+  }
+
+  &:active {
+    &:before {
+      width: 3px;
+    }
+
+    .services__heading {
+      color: $orange;
+
+      &:after {
+        background-color: $orange;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.services__info {
+  padding: 35px 33px;
+  max-width: 280px;
+
+  @include _992 {
+    max-width: 100%;
+  }
+}
+
+.services__heading {
+  display: inline-block;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #333333;
+
+  margin-bottom: 15px;
+
+  transition: color $transition;
+
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $black;
+    transition: width $transition;
+  }
+}
+
+.services__text {
+  font-size: 14px;
+  color: #7E7E7E;
+}
+
+.services__img {
+  max-width: 270px;
+  min-width: 190px;
+}
+
+.services__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.services__bottom {
+  background-color: #FAFAFA;
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

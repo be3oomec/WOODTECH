@@ -1,0 +1,27 @@
+.services-item {
+  padding-top: 165px;
+  background-color: $white;
+}
+
+.services-item__inner {
+  padding-bottom: 50px;
+}
+
+// .services-item__content {}
+
+.services-item__img {
+  max-width: 930px;
+  margin: 0 auto;
+  margin-bottom: 45px;
+  padding: 15px;
+
+  border: 1px solid #E4E6E8;
+}
+
+.services-item__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+// .services-item__text {}
