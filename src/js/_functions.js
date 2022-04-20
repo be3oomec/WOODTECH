@@ -1,3 +1,6 @@
+// Реализация табов
+import GraphTabs from 'graph-tabs';
+
 // Подключение свайпера gsap micromodal
 import MicroModal from 'micromodal';
 import {
@@ -138,3 +141,7 @@ const blogSlide = new Swiper('.blog__slider', {
     },
   },
 });
+
+
+// ТАБЫ about page
+const tabs = new GraphTabs('about');

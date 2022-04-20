@@ -1,9 +1,9 @@
 // base
-@import "vars";
-@import "reset";
-@import "mixins";
-@import "fonts";
-@import "settings";
+@import "./options/vars";
+@import "./options/reset";
+@import "./options/mixins";
+@import "./options/fonts";
+@import "./options/settings";
 
 // pages
 // components page
@@ -32,5 +32,7 @@
 
 @import "./components/blog-items";
 @import "./components/pagination";
+
+@import "./components/about";
 
 
